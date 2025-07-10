@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: My Custom Contact Form
-Description: A contact form plugin with frontend form and admin submission viewer.
+Description: A contact form plugin with frontend form and admin submission viewer. Use Shortcode: [mccf_form]
 Version: 1.0
 Author: Ami Dalwadi
 */
@@ -24,8 +24,8 @@ function mccf_activate_plugin()
         PRIMARY KEY (id)
     ) $charset_collate;";
 
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php'); // Load dbDelta
+    dbDelta($sql);  // dbDelta() is a WordPress function that creates or updates a table in the database using the SQL statement you provide.
 }
 
 // Deactivation: optional log

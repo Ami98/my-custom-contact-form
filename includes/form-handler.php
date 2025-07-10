@@ -2,6 +2,19 @@
 // Enqueue optional styles
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('mccf-style', plugins_url('../assets/style.css', __FILE__));
+    wp_enqueue_script(
+        'mccf-form-js',
+        plugins_url('../assets/form.js', __FILE__),
+        ['jquery'],
+        null,
+        true
+    );
+
+    // Pass AJAX URL and nonce to JS
+    wp_localize_script('mccf-form-js', 'mccf_ajax_obj', [
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('mccf_nonce')
+    ]);
 });
 
 // Shortcode: [mccf_form]

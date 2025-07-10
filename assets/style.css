@@ -1,0 +1,13 @@
+form {
+    background: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #ccc;
+    max-width: 500px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+}
